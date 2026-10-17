@@ -125,7 +125,7 @@ assert(
   'weather widget injects itself as the panel host'
 )
 assert(
-  widgetSource.includes('setting("onRightClick", "")') && widgetSource.includes('root.bar.run(root.rightClickCommand)'),
+  widgetSource.includes('setting("onRightClick", "")') && /if \(b === Qt\.RightButton\) root\.bar\.run\(root\.rightClickCommand\)/.test(widgetSource),
   'weather widget runs the onRightClick setting on right-click'
 )
 assert(
